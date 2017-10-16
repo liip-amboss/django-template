@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 from . import get_env_variable
 from .. import get_project_root_path
 
-gettext = lambda s: s
+from django.utils.translation import ugettext_lazy
 
 # Full filesystem path to the project.
 BASE_DIR = get_project_root_path()
