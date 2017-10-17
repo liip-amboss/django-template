@@ -21,3 +21,4 @@ vagrant_ansible_inventory_default
 /.cache/
 /.coverage
 
+*.mo
