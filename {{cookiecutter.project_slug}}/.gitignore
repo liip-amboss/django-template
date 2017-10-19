@@ -22,3 +22,6 @@ vagrant_ansible_inventory_default
 /.coverage
 
 *.mo
+
+.idea/
+.pycharm_helpers/
