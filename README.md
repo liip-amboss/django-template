@@ -4,7 +4,7 @@ Django project template
 To create a new project using this template, do the following:
 
     pip install cookiecutter
-    cookiecutter gh:liip/django-template
+    cookiecutter gh:liip-amboss/django-template
 
 If you chose to use [Drifter](https://github.com/liip/drifter), run the
 following commands to get you project up and running:
