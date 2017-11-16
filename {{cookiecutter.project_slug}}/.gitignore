@@ -11,3 +11,6 @@ __pycache__
 
 .idea/
 .pycharm_helpers/
+
+/error_log
+/info_log
