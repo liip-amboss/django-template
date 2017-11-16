@@ -254,7 +254,7 @@ INFO_LOG_FILE = get_env_variable('INFO_LOG_FILE',
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'filters': {
         'info_only': {
             '()': '{{ cookiecutter.project_slug }}.config.log_filters.InfoLogFilter'
@@ -299,17 +299,24 @@ LOGGING = {
     'loggers': {
         '': {
             'handlers': ['error_file', 'info_file', 'console', 'mail_admins'],
-            'level': 'DEBUG',
+            'level': 'INFO',
         },
         'django': {
             'handlers': ['error_file', 'info_file', 'console', 'mail_admins'],
-            'level': 'DEBUG',
-        },
-        'django.db.backends': {
-            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': False,
         },
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'ERROR',  # change this to DEBUG to log executed SQL statements
+            'propagate': False,
+        },
+        # log ./mange.py runserver requests
+        'django.server': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        }
     },
     'formatters': {
         'default': {
