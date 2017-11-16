@@ -25,3 +25,6 @@ vagrant_ansible_inventory_default
 
 .idea/
 .pycharm_helpers/
+
+/error_log
+/info_log
