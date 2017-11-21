@@ -58,7 +58,8 @@ def generate_blank_locale_files():
     for lang in '{{ cookiecutter.language_list }}'.split(','):
         os.mkdir('locale/{}'.format(lang))
         os.mkdir('locale/{}/LC_MESSAGES'.format(lang))
-        open('locale/{}/LC_MESSAGES/django.po'.format(lang), 'w').close()
+        shutil.copy('locale/base.po', 'locale/{}/LC_MESSAGES/django.po'.format(lang))
+    os.remove('locale/base.po')
 
 
 def install_ci_drifter_files():
