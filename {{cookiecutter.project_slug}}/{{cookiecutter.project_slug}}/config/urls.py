@@ -9,7 +9,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='base.html')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     {%- if cookiecutter.use_djangocms == 'y' %}
     url(r'^', include('cms.urls')),
     {%- endif %}
@@ -20,5 +20,5 @@ if settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', django.views.static.serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        url(r'^__debug__/', debug_toolbar.urls),
     ] + staticfiles_urlpatterns() + urlpatterns
