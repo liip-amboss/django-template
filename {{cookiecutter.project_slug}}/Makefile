@@ -1,5 +1,6 @@
 .DEFAULT_GOAL := help
 
+<<<<<<< HEAD
 REQUIREMENTS_DIR = requirements
 objects = $(REQUIREMENTS_DIR)/base.txt $(REQUIREMENTS_DIR)/dev.txt
 
