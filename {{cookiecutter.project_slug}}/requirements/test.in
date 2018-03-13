@@ -7,5 +7,5 @@ pytest-cov
 pytest-django
 pytest-xdist
 pytest-env
-factory_boy==2.8.1
+factory_boy
 pytest_factoryboy
